@@ -1,0 +1,21 @@
+    <filter>
+        <filter-name>httpFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+        	<param-name>uriConditions</param-name>
+        	<param-value>/**</param-value>
+        </init-param>
+        <init-param> 
+            <param-name>targetFilterLifecycle</param-name> 
+            <param-value>true</param-value> 
+        </init-param> 
+        <init-param>
+        	<param-name>httpFilter</param-name>
+			<param-value>/**/*.html,/**/*.htm,/**/*.js,/**/*.gif,/**/*.css,/**/*.rtt,/**/*.dsp,/**/*.jpg,/**/*.png,/**/*.mp4,/**/*.flv,/**/*.doc,/**/*.docx,/**/*.xls,/**/*.xlsx,/**/*.ppt,/**/*.pptx,/**/*.pdf,/**/*.ico</param-value>
+        </init-param>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>httpFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
